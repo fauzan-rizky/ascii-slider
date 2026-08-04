@@ -241,10 +241,12 @@ for i in range(len(buffer)):
 
 print(len(buffer[0]))
 for frames in range(len(buffer[0])):
+    print(f"\033[{font_height}A", end="", flush=True)
     for lines in range(font_height):
+            print("\033[2K", end="")
             print(*buffer[lines][frames:term_columns+frames], sep="")
-    time.sleep(0.005)
-    os.system("cls")
+    time.sleep(0.01)
+    
 
 
 # Alphabeticals set
